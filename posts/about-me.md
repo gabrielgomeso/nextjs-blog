@@ -1,5 +1,5 @@
 ---
-title: 'First Post and About me'
+title: 'Quem sou eu e o que é esse blog'
 date: '2020-10-15'
 ---
 

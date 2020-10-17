@@ -1,6 +1,12 @@
 import { parseISO, format } from 'date-fns'
+import pt from 'date-fns/locale/pt';
 
 export default function Date({ dateString }) {
   const date = parseISO(dateString)
-  return <time dateTime={dateString}>{format(date, 'LLLL d, yyyy')}</time>
+  const formattedDate = format(
+    date,
+    "'Dia' dd 'de' MMMM' de 'yyyy",
+    { locale: pt }
+);
+  return <time dateTime={dateString}>{formattedDate}</time>
 }

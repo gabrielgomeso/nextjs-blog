@@ -22,12 +22,12 @@ export default function Home({ lastPostData }) {
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
-        <p>Brazilian, self-taught developer, tech lover and, sometimes, Dungeon Master. <a href="https://www.linkedin.com/in/gabrielgomeso">LinkedIn</a></p>
+        <p>Programador autodidata com foco em front-end, caiçara e, às vezes, Mestre de RPG. <a href="https://www.linkedin.com/in/gabrielgomeso">LinkedIn</a></p>
         
       </section>
       
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Last post</h2>
+        <h2 className={utilStyles.headingLg}>Última publicação</h2>
         <ul className={utilStyles.list}>
             <li className={utilStyles.listItem} key={lastPostData.id}>
               <Link href={`/posts/${lastPostData.id}`}>

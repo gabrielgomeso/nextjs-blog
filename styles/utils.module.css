@@ -50,3 +50,41 @@
   .lightText {
     color: #999;
   }
+
+  /* About me styles */
+
+  .skills {
+    list-style-type: none;
+  }
+
+  .aboutme {
+    font-size: 18px;
+  }
+
+
+@media(max-width: 560px){
+  .heading2Xl{
+    font-size: 1.5rem;
+  }
+}
+
+/* Contato */
+
+.contactContainer{
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.contactItem{
+  padding: 0;
+}
+
+.contactImg{
+  padding: 0;
+}
+
+.contactLink{
+  padding: 0;
+}
