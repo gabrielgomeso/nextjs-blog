@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Layout, { siteTitle } from '../components/layout'
-import utilStyles from '../styles/utils.module.css'
+import { Description, PageSection, PageTitle, LightText, List, ListItem } from '../styles/UtilStyles'
 import { getLastPost } from '../lib/posts'
 
 import Link from 'next/link'
@@ -21,25 +21,24 @@ export default function Home({ lastPostData }) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className={utilStyles.headingMd}>
+      <Description>
         <p>Programador autodidata com foco em front-end, caiçara e, às vezes, Mestre de RPG. <a href="https://www.linkedin.com/in/gabrielgomeso">LinkedIn</a></p>
-        
-      </section>
+      </Description>
       
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Última publicação</h2>
-        <ul className={utilStyles.list}>
-            <li className={utilStyles.listItem} key={lastPostData.id}>
+      <PageSection>
+        <PageTitle>Última publicação</PageTitle>
+        <List>
+            <ListItem key={lastPostData.id}>
               <Link href={`/posts/${lastPostData.id}`}>
                 <a>{lastPostData.title}</a>
               </Link>
               <br />
-              <small className={utilStyles.lightText}>
+              <LightText>
                 <Date dateString={lastPostData.date} />
-              </small>
-            </li>
-        </ul>
-      </section>
+              </LightText>
+            </ListItem>
+        </List>
+      </PageSection>
     </Layout>
   )
 }

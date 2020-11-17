@@ -1,9 +1,9 @@
 import Head from 'next/head'
-import styles from './layout.module.css'
-import utilStyles from '../styles/utils.module.css'
+import { Nav, List, ListItem, Container, Header, BackToHome } from './LayoutStyles'
+import { ProfileImage, Heading2x1 } from '../styles/UtilStyles'
 import Link from 'next/link'
 
-const name = 'Gabriel Gomes de Oliveira'
+export const name = 'Gabriel Gomes'
 export const siteTitle = "Gabriel's Dev Blog"
 
 export default function Layout({ children, home }) {
@@ -23,45 +23,46 @@ export default function Layout({ children, home }) {
         />
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
+        
+        <link rel="stylesheet" href='https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;700&display=swap'></link>
       </Head>
-      <nav className={styles.nav}>
-        <ul className={styles.list}>
-          <li className={styles.listItem} >
+      <Nav>
+        <List>
+          <ListItem >
             <Link href='/blog'><a>Blog</a></Link>
-          </li>
-          <li className={styles.listItem}>
+          </ListItem>
+          <ListItem>
             <Link href='/portfolio'><a>Portifólio</a></Link>
-          </li>
-          <li className={styles.listItem}>
+          </ListItem>
+          <ListItem>
             <Link href='/contact'><a>Contato</a></Link>
-          </li>
-          <li className={styles.listItem}>
+          </ListItem>
+          <ListItem>
             <Link href='/about'><a>Sobre</a></Link>
-          </li>
-        </ul>
-      </nav>
-      <div className={styles.container}>
-        <header className={styles.header}>
+          </ListItem>
+        </List>
+      </Nav>
+      <Container>
+        <Header>
           {home ? (
             <>
-              <img
+              <ProfileImage
                 src="/images/profile.jpg"
-                className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`}
                 alt={name}
               />
-              <h1 className={utilStyles.heading2Xl}>{name}</h1>
+              <Heading2x1>{name}</Heading2x1>
             </>
           ) : ('')}
-        </header>
+        </Header>
         <main>{children}</main>
         {!home && (
-          <div className={styles.backToHome}>
+          <BackToHome>
             <Link href="/">
               <a>← Back to home</a>
             </Link>
-          </div>
+          </BackToHome>
         )}
-      </div>
+      </Container>
     </>
   )
 }

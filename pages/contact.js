@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Layout, { siteTitle } from '../components/layout'
-import utilStyles from '../styles/utils.module.css'
+import { PageSection, PageTitle, ContactContainer, ContactItem, ContactLink } from '../styles/UtilStyles'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter, faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
@@ -11,32 +11,32 @@ export default function Contact() {
         <title>{siteTitle}</title>
       </Head>
       
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Contato</h2>
+      <PageSection>
+        <PageTitle>Contato</PageTitle>
         <p> 
             Para entrar em contato comigo é só mandar mensagem em uma das minhas redes sociais:
         </p>
-        <div className={utilStyles.contactContainer}>
-          <div className={utilStyles.contactItem}>
-            <a href="https://www.linkedin.com/in/gabrielgomeso" className={utilStyles.contactLink} target="_blank">
-            <FontAwesomeIcon id={utilStyles.contactImg} icon={faLinkedin} className='fas fa-camera fa-lg' />
+        <ContactContainer>
+          <ContactItem>
+            <FontAwesomeIcon width="40" style={{ padding: 0, marginRight: '10px' }} icon={faLinkedin} />
+            <ContactLink href="https://www.linkedin.com/in/gabrielgomeso" target="_blank">
               LinkedIn
-            </a>
-          </div>
-          <div className={utilStyles.contactItem}>
-            <a href="https://twitter.com/gabriel_narr" className={utilStyles.contactLink} target="_blank">
-            <FontAwesomeIcon id={utilStyles.contactImg} icon={faTwitter} className='fas fa-camera fa-lg' />
+            </ContactLink>
+          </ContactItem>
+          <ContactItem>
+            <FontAwesomeIcon width="40" style={{ padding: 0, marginRight: '10px' }} icon={faTwitter} />
+            <ContactLink href="https://twitter.com/gabigol84" target="_blank">
               Twitter
-            </a>
-          </div>
-          <div className={utilStyles.contactItem}>
-          <a href="https://wa.link/bmlrfv" className={utilStyles.contactLink} target="_blank">
-            <FontAwesomeIcon id={utilStyles.contactImg} icon={faWhatsapp} className='fas fa-camera fa-lg' />
-              Whatsapp
-            </a>
-          </div>
-        </div>
-      </section>
+            </ContactLink>
+          </ContactItem>
+          <ContactItem>
+            <FontAwesomeIcon width="40" style={{ padding: 0, marginRight: '10px' }} icon={faWhatsapp} />
+            <ContactLink href="https://wa.link/bmlrfv" target="_blank">
+                Whatsapp
+            </ContactLink>
+          </ContactItem>
+        </ContactContainer>
+      </PageSection>
     </Layout>
   )
 }
